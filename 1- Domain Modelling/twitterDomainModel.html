@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Domain Model</title>
+</head>
+<body>
+    <h1>100x Microblogging Platform-Twitter Clone</h1>
+
+<p>Context is the King</p>
+
+ENTITES- User, Post, feed/timeline, left Side bar, Right Side bar, Messaging box
+
+
+ATTRIBUTES
+User:-
+Proflie
+
+Post:-
+1/2-(attributes after posting the tweet)
+user Profile Pic
+User name
+user id
+timestamp
+Drop down-menu(3 dotts)
+Content
+comment
+like
+repost
+views
+bookmark
+share
+
+2/2(attributes while writing a tweet before posting)
+drafts
+profile pic
+Content
+who can reply
+Editing bar(media,GIF,Poll,Emoji,Schedule,Location)
+Post Button
+
+
+Feed:-
+for you tab
+following tab
+timeline settings
+Posts
+
+Left Side Bar:-
+home
+explore
+notifications
+messages
+lists
+bookmarks
+communites
+premium
+profile
+more
+Create a post
+Accounts
+
+
+Right Side Bar:-
+Search Bar
+Suscribe to premium card with subscribe buttom
+trending hastags--What's Happening
+who to follow recommendations
+
+Messaging Box:-
+collapse button
+new message button 
+user with Conversation
+
+
+swanand notes
+
+User
+
+  - username (unique - constraint)
+  - name
+ - email (unique - constraint)
+  - password
+  - birthdate
+  - registration status (otp pending, otp verified, suspended, admin verified, magic link verified)
+  - profile picture URL/identifier
+  - header image URL/identifier
+  - profile picture alt text
+  - Bio (400 character limit)
+
+ProfilePicture
+
+  - Belongs to User (1-1 relationship, because only 1 picture at a time)
+  - Original Image
+  - Crop Boundaries
+  - Alt Text
+
+RegistrationForm
+
+  - username
+  - email (unique - constraint)
+  - password
+  - birthdate
+  - registration status
+
+LoginForm
+
+  - username
+  - email
+  - password
+  - password confirmation
+
+OTPEmail
+
+  - Code (secure / hashed)
+  - Belongs to User 
+  - Sent At
+  - Expires At
+  - HTML Content
+  - Text Content
+
+Post
+
+  - content (280 characters)
+ - timestamp (e.g. a post cannot be older than the user itself)
+  - Belongs to User (1-many relationship)
+  - Reply Count
+  - Repost Count
+  - Like Count
+
+Follow
+
+  - who is being followed
+  - who is following
+
+  - Examples:
+
+    - "Swanand follows Siddhant"
+   - "Varun follows Siddhant"
+    - "Siddhant follows Ravigopal"
+
+HomePage
+
+  - Hero Image
+  - Login CTA
+  - Signup CTA
+  - Text
+
+PostComposeForm
+
+  - Belongs to User
+  - Content
+  - Post Status (pending, posted, deleted, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
